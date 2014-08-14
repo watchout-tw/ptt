@@ -23,12 +23,88 @@
          cursor: pointer;
 
        }
-
+       canvas {
+         display: block;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         position: fixed;
+       }
     </style>
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="jquery.let_it_snow.js"></script>
+    <script type="text/javascript" src="jquery.konami.js"></script>
 </head>
 <body>
+    <canvas width="100%" height="100%" class="flare"></canvas>
     <a href="https://www.facebook.com/WatchOutTW"><img src="index.jpg" ></a>
+    <script type="text/javascript">
 
+      $(function(){
+        var images = [
+          'lines/Line__0000_閃亮亮.png',
+          'lines/Line__0001_翻滾.png',
+          'lines/Line__0002_spicy.png',
+          'lines/Line__0003_鼻子噴氣.png',
+          'lines/Line__0004_失眠.png',
+          'lines/Line__0005_扭.png',
+          'lines/Line__0006_溜冰.png',
+          'lines/Line__0007_耍自閉.png',
+          'lines/Line__0008_熱.png',
+          'lines/Line__0009_偷放屁.png',
+          'lines/Line__0010_拋媚眼.png',
+          'lines/Line__0011_放空.png',
+          'lines/Line__0012_Cold.png',
+          'lines/Line__0013_土下座.png',
+          'lines/Line__0014_good-bye.png',
+          'lines/Line__0015_思考.png',
+          'lines/Line__0016_發懶.png',
+          'lines/Line__0017_櫻花.png',
+          'lines/Line__0018_魂魄.png',
+          'lines/Line__0019_吶喊.png',
+          'lines/Line__0020_跳舞.png',
+          'lines/Line__0021_打屁股.png',
+          'lines/Line__0022_劈.png',
+          'lines/Line__0023_吃爆米花.png',
+          'lines/Line__0024_來來來.png',
+          'lines/Line__0025_老摳摳.png',
+          'lines/Line__0026_ok.png',
+          'lines/Line__0027_怒.png',
+          'lines/Line__0028_沒有拉.png',
+          'lines/Line__0029_bike.png',
+          'lines/Line__0030_sorry.png',
+          'lines/Line__0031_打呵欠.png',
+          'lines/Line__0032_寂寞.png',
+          'lines/Line__0033_翹腳.png',
+          'lines/Line__0034_攤手.png',
+          'lines/Line__0035_乾杯.png',
+          'lines/Line__0036_good-night.png',
+          'lines/Line__0037_watching-you.png',
+          'lines/Line__0038_？？？.png',
+          'lines/Line__0039_感動.png'
+        ];
+        $( window ).konami({
+          cheat: function() {
+            $("canvas.flare").let_it_snow({
+              windPower: 0,
+              speed: 2,
+              size: 40,
+              count: 15,
+              interaction: false,
+              image: images
+            });
+          }
+        });
+
+        // $("canvas.snow").let_it_snow({
+        //   windPower: 3,
+        //   speed: 1,
+        //   count: 250,
+        //   size: 0
+        // });
+
+      });
+    </script>
 </body>
 </html>
